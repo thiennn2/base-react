@@ -1,8 +1,8 @@
-import React from "react";
-import NotFound from "../pages/404";
-import About from "../pages/About";
+import React from 'react';
+import NotFound from '../pages/404';
+import About from '../pages/About';
 
-import Home from "./../pages/Home";
+import Home from './../pages/Home';
 
 const routes = [
   { exact: true, path: '/', component: Home },

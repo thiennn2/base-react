@@ -8,11 +8,7 @@ interface Props {
  * Global layout
  */
 function Blank(props: Props) {
-  return (
-    <>
-      {props.children}
-    </>
-  )
+  return <>{props.children}</>;
 }
 
 export default Blank;

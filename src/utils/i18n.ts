@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next';
 
 import LanguageDetector from 'i18next-browser-languagedetector';
 // don't want to use this?
-// have a look at the Quick start guide 
+// have a look at the Quick start guide
 // for passing in lng and translations on init
 import en from '../locales/en.json';
 import ja from '../locales/ja.json';
@@ -31,8 +31,7 @@ i18n
       en: { translation: en },
       ja: { translation: ja },
       vi: { translation: vi },
-    }
+    },
   });
-
 
 export default i18n;
