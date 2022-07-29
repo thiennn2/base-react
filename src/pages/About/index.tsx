@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { AppContext } from 'store';
+import { AppContext, useAppContext } from 'store';
 
 export default function About() {
   const { t } = useTranslation();
-  const { posts } = useContext(AppContext);
+  const { posts } = useAppContext(AppContext);
   return (
     <div>
       <Link to="/">Home</Link>
