@@ -1,13 +1,22 @@
-import { createContext, useContext } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import type { TypedUseSelectorHook } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import postsReducer from './postsSlice';
+// ...
 
-export interface AppContextProps {
-  posts: any[];
-}
+export const store = configureStore({
+  reducer: {
+    posts: postsReducer,
+    // comments: commentsReducer,
+    // users: usersReducer,
+  },
+});
 
-const initialContext: AppContextProps = {
-  posts: [],
-};
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+export type AppDispatch = typeof store.dispatch
 
-export const AppContext = createContext(initialContext);
-
-export const useAppContext = useContext;
+// Use throughout your app instead of plain `useDispatch` and `useSelector`
+export const useAppDispatch: () => AppDispatch = useDispatch;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

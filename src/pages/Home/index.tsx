@@ -2,18 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'components/themes/Button';
-import { AppContext, useAppContext } from 'store';
+import { useAppSelector } from 'store';
 
 export default function Home() {
   const { t } = useTranslation();
-  const { posts } = useAppContext(AppContext);
+  const posts = useAppSelector(state => state.posts);
   return (
     <div>
       <Link to="/about">About</Link>
       <h1>Home</h1>
       <p>This is an example of how you can do things like this:</p>
       <Button>Click me</Button>
-      {posts.map((post) => (
+      {posts.map(post => (
         <article className="post-excerpt" key={post.id}>
           <h3>{post.title}</h3>
           <p className="post-content">{post.content.substring(0, 100)}</p>

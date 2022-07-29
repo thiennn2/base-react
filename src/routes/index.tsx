@@ -1,11 +1,10 @@
 import React from 'react';
-import NotFound from '../pages/404';
 import About from '../pages/About';
+import Home from '../pages/Home';
 
-import Home from './../pages/Home';
 
 const routes = [
-  { exact: true, path: '/', component: Home },
+  { exact: true, path: '/', component: Home, layout: React.Fragment },
   { exact: true, path: '/about', component: About },
 ];
 
