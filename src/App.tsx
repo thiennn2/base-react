@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import {Routes, Route, Link} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import NotFound from './pages/404';
 import Blank from './layouts';
 import routes from './routes';
@@ -11,13 +11,14 @@ function App() {
   });
 
   useEffect(() => {
-    setRootState(prev => ({
+    setRootState((prev) => ({
       ...prev,
       posts: [
         { id: '1', title: 'First Post!', content: 'Hello!' },
-        { id: '2', title: 'Second Post', content: 'More text' }
-      ]}));
-    }, []);
+        { id: '2', title: 'Second Post', content: 'More text' },
+      ],
+    }));
+  }, []);
 
   return (
     <AppContext.Provider value={rootState}>
@@ -27,20 +28,20 @@ function App() {
             <Route
               key={index}
               path={route.path}
-              element={(
+              element={
                 <React.Fragment>
                   <Blank>
                     <route.component />
                   </Blank>
                 </React.Fragment>
-              )}
+              }
             />
-          )
+          );
         })}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AppContext.Provider>
-  )
+  );
 }
 
-export default App
+export default App;
