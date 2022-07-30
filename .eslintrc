@@ -12,11 +12,21 @@
     "ecmaVersion": 2021,
     "project": "./tsconfig.json"
   },
-  "plugins": ["prettier"],
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
-    "prettier/prettier": ["error"],
-    "semi": ["error", "always"],
-    "object-curly-spacing": ["error", "always"],
+    "prettier/prettier": [
+      "error"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
     "camelcase": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-explicit-any": 1,
@@ -29,10 +39,20 @@
     "no-underscore-dangle": "off",
     "no-shadow": "off",
     "no-new": 0,
-    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/no-shadow": [
+      "error"
+    ],
     "@typescript-eslint/no-unused-vars": "warn",
-    "quotes": [2, "single", { "avoidEscape": true }],
+    "quotes": [
+      2,
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
     "class-methods-use-this": "off",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
