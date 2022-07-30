@@ -7,9 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint 'src/**/*.tsx'",
-    "lint-fix": "eslint --fix 'src/**/*.tsx'",
-    "pretty": "prettier --write 'src/**'",
+    "lint": "eslint 'src/**/*.ts*'",
+    "lint-fix": "eslint --fix 'src/**/*.ts*'",
+    "pretty": "prettier --write 'src/**/*.ts*'",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -46,16 +46,5 @@
     "typescript": "^4.6.4",
     "vite": "^3.0.0",
     "vite-tsconfig-paths": "^3.5.0"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "eslint --fix src/**/*.(ts|tsx)",
-      "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
