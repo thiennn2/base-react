@@ -12,7 +12,16 @@ export default function Home() {
       <Link to="/about">About</Link>
       <h1>Home</h1>
       <p>This is an example of how you can do things like this:</p>
-      <Button>Click me</Button>
+      {/* Buttons */}
+      <div className=''>
+        <Button type="primary">Primary Button</Button>
+        <Button>Default Button</Button>
+        <Button type="dashed">Dashed Button</Button>
+        <br />
+        <Button type="text">Text Button</Button>
+        <Button type="link">Link Button</Button>
+      </div>
+      {/* Buttons */}
       {posts.map(post => (
         <article className="post-excerpt" key={post.id}>
           <h3>{post.title}</h3>

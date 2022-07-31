@@ -3,10 +3,12 @@
 Developer experience first:
 
 - Type checking TypeScript
+- [Antd](https://ant.design/docs)
+- [Charts](https://ant.design/docs/react/recommendation)
 
 ## Structure
-
 ```sh
+$ tree --gitignore ./
 .
 ├── Dockerfile
 ├── README.md

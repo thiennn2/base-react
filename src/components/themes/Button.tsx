@@ -1,9 +1,63 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Theme } from 'types';
+import { Button as ButtonAntd } from 'antd';
 
-export const Button = styled.button`
-  background: ${({ theme }: { theme: Theme }) => theme.primary};
-  color: ${({ theme }: { theme: Theme }) => theme['base-100']};
-  border-color: ${({ theme }: { theme: Theme }) => theme.primary};
+export const Button = styled(ButtonAntd)`
+  && {
+    ${({ theme, type }) => {
+      switch (type) {
+        case 'primary':
+          return `
+            background:  ${theme.primary};
+            color: ${theme['base-100']};
+            border-color: ${theme.primary};
+          `;
+        case 'link':
+          return `
+            color: ${theme.primary};
+          `;
+        case 'default':
+          return `
+            color: ${theme.primary};
+            border-color: ${theme.primary};
+          `;
+        case 'text':
+        default:
+          return '';
+      }
+    }}
+
+    &:focus,
+    &:active,
+    &:hover {
+      ${({ theme, type }) => {
+        switch (type) {
+          case 'primary':
+            return `
+              background:  ${theme.primary};
+              color: ${theme['base-100']};
+              border-color: ${theme.primary};
+              opacity: 0.75;
+            `;
+          case 'link':
+            return `
+              border-color: transparent;
+            `;
+          case 'text':
+            return '';
+          case 'dashed':
+          default:
+            return `
+              color: ${theme.primary};
+              border-color: ${theme.primary};
+            `;
+        }
+      }}
+    }
+
+    &:active {
+      // animation: none;
+      transform: scale(var(--btn-focus-scale,.95));
+    }
+  }
 `;
