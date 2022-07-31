@@ -13,3 +13,4 @@ coverage/*
 /public/
 
 # custom definition files
+commitlint.config.js
