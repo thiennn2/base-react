@@ -1,0 +1,14 @@
+{
+  "Submit": "Submit",
+  "Forgot Password": "Quên mật khẩu?",
+  "Back to login": "Quay lại màn hình đăng nhập",
+  "header": {
+    "title": "Quản lý nhà nước",
+    "logout": "Đăng Xuất"
+  },
+  "validate": {
+    "requiredEmail": "Vui lòng nhập thông tin email!",
+    "requiredPassword": "Vui lòng nhập mật khẩu!",
+    "invalidEmail": "Email không hợp lệ!"
+  }
+}

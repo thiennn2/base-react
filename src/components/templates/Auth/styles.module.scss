@@ -1,0 +1,24 @@
+.pageWrapper {
+    height: 100vh;
+    width: 100vw;
+}
+
+.mainWrapper {
+    max-height: 100%;
+    flex: 1;
+    overflow-y: auto;
+}
+.pageContent {
+    background-color: #e9e9e9;
+    flex: 1;
+    margin-top: 48px;
+
+    &.headerTop {
+        margin-top: 0;
+        max-width: 100vw;
+    }
+
+}
+.coverContent {
+    display: flex
+}

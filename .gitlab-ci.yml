@@ -1,0 +1,52 @@
+stages:
+  - DeployTest
+  - DeployStaging
+  - DeployProduction
+
+DeployTest:
+  stage: DeployTest
+  image: node:14.19.1
+  only: ['develop']
+  script:
+    - apt-get update && apt-get install rsync -y
+    - mkdir -p ~/.ssh
+    # - ssh-keyscan -H "$TEST_HOST" >> ~/.ssh/known_hosts
+    # - echo "$TEST_KEY" > ~/.ssh/id_rsa
+    # - chmod 600 ~/.ssh/id_rsa
+    # - echo "$TEST_ENV" > .env
+    - yarn install && \
+    - npm rebuild node-sass && \
+    - CI= yarn build
+    # - rsync --progress -avzh -e "ssh " --rsync-path="sudo rsync" --delete ./dist "$TEST_USER@$TEST_HOST:/usr/share/nginx/html/fe"
+
+DeployStaging:
+  stage: DeployStaging
+  image: node:14.19.1
+  only: ['staging']
+  script:
+    - apt-get update && apt-get install rsync -y
+    - mkdir -p ~/.ssh
+    # - ssh-keyscan -H "$TEST_HOST" >> ~/.ssh/known_hosts
+    # - echo "$TEST_KEY" > ~/.ssh/id_rsa
+    # - chmod 600 ~/.ssh/id_rsa
+    # - echo "$TEST_ENV" > .env
+    - yarn install && \
+    - npm rebuild node-sass && \
+    - CI= yarn build
+    # - rsync --progress -avzh -e "ssh " --rsync-path="sudo rsync" --delete ./dist "$TEST_USER@$TEST_HOST:/usr/share/nginx/html/fe"
+
+DeployProduction:
+  stage: DeployProduction
+  image: node:14.19.1
+  only: ['main']
+  script:
+    - apt-get update && apt-get install rsync -y
+    - mkdir -p ~/.ssh
+    # - ssh-keyscan -H "$TEST_HOST" >> ~/.ssh/known_hosts
+    # - echo "$TEST_KEY" > ~/.ssh/id_rsa
+    # - chmod 600 ~/.ssh/id_rsa
+    # - echo "$TEST_ENV" > .env
+    - yarn install && \
+    - npm rebuild node-sass && \
+    - CI= yarn build
+    # - rsync --progress -avzh -e "ssh " --rsync-path="sudo rsync" --delete ./dist "$TEST_USER@$TEST_HOST:/usr/share/nginx/html/fe"

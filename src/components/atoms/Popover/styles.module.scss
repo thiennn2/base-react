@@ -1,0 +1,9 @@
+.popover {
+  :global {
+    .ant-popover-inner-content {
+      font-size: 14px;
+      min-width: 240px;
+      padding: 5px 16px 16px 16px;
+    }
+  }
+}
