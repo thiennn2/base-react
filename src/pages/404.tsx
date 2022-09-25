@@ -1,15 +1,23 @@
+import { Button, Result } from 'antd';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { ROUTES } from 'routes';
 
-export default function NotFound() {
+const PageNotFound: React.FC = () => {
+  const { t } = useTranslation();
   return (
-    <div>
-      <div>404</div>
-      <Link to="/">Home</Link>
-
-      <div>This page does not exist</div>
-
-      <div>The page you are looking for could not be found.</div>
-    </div>
+    <Result
+      status="404"
+      title="404"
+      subTitle={t('Sorry, the page you visited does not exist.')}
+      extra={(
+        <Link to={ROUTES.Home}>
+          <Button type="primary">{t('Back Home')}</Button>
+        </Link>
+      )}
+    />
   );
-}
+};
+
+export default PageNotFound;

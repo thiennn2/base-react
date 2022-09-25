@@ -10,5 +10,7 @@
     "requiredEmail": "Vui lòng nhập thông tin email!",
     "requiredPassword": "Vui lòng nhập mật khẩu!",
     "invalidEmail": "Email không hợp lệ!"
-  }
+  },
+  "Back Home": "Quay lại trang chủ",
+  "Sorry, the page you visited does not exist.": "Xin lỗi, trang bạn vừa truy cập không tồn tại."
 }

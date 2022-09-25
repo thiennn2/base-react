@@ -1,6 +1,11 @@
 html {
   font-family: 'Roboto', sans-serif;
 }
+
+div#root {
+  height: 100%;
+}
+
 .cursor-pointer {cursor: pointer;}
 .d-flex {display: flex;}
 .d-block {display: block;}
