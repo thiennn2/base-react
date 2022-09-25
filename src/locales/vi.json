@@ -12,5 +12,6 @@
     "invalidEmail": "Email không hợp lệ!"
   },
   "Back Home": "Quay lại trang chủ",
-  "Sorry, the page you visited does not exist.": "Xin lỗi, trang bạn vừa truy cập không tồn tại."
+  "Sorry, the page you visited does not exist.": "Xin lỗi, trang bạn vừa truy cập không tồn tại.",
+  "Sorry, you are not authorized to access this page.": "Xin lỗi, bạn không có quyền truy cập trang này."
 }
